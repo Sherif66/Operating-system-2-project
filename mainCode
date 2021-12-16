@@ -1,2 +1,12 @@
 
-nnnnnn
+#include <iostream>
+using namespace std;
+int main() {
+    function pageReplacement(){
+        
+        
+        
+    }
+
+    return 0;
+}
