@@ -1,45 +1,56 @@
+// os2 projeect.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
 #include <iostream>
 #include <string>
 using namespace std;
-void pageReplacement(int freeFrames,int refrenceString[],string algorithm){
-        int pageFaults;
-        int refrenceStringPtr=0;
-        int frames[freeFrames];
-        int framesPtr=0;
-        int refrenceStringLength=sizeof(refrenceString) / sizeof(refrenceString[0]);
-        if(algorithm=="FIFO"){
-        for(int i=0;i<freeFrame;++i){
-            frames[i]=-1;
+void pageReplacement(int freeFrames, int refrenceString[], string algorithm) {
+    int pageFaults = 0;
+    int refrenceStringPtr = 0;
+    int frames[freeFrames];
+    int framesPtr = 0;
+    int refrenceStringLength = sizeof(refrenceString) / sizeof(refrenceString[0]);
+    if (algorithm == "FIFO") {
+        for (int i = 0; i < freeFrames; ++i) {
+            frames[i] = -1;
         }
-        for(int j=refrenceStringPtr;j<refrenceStringLength;++j){
-            if(framePtr>freeFrames-1){
-                framePtr=0;
+        for (int j = refrenceStringPtr; j < refrenceStringLength; ++j) {
+            if (framesPtr > freeFrames - 1) {
+                framesPtr = 0;
             }
-             //find if the element is availble or not
-                for(int i=0;i<freeFrames;++i){
-                    if(frames[i]==refrenceString[refrenceStringPtr]){
-                        continue;
-                    }
-                    else{
-                        frames[framesPtr]=refrenceString[refrenceStringPtr];
-                        ++framesPtr;
-                        ++pageFaults;
-                    }
+            //find if the element is availble or not
+            for (int i = 0; i < freeFrames; ++i) {
+                if (frames[i] == refrenceString[refrenceStringPtr]) {
+                    continue;
                 }
-                refrenceStringPtr++;
-        }
-        cout<<pageFaults;
-            
+                else {
+                    frames[framesPtr] = refrenceString[refrenceStringPtr];
+                    ++framesPtr;
+                    ++pageFaults;
+                }
+            }
         }
     }
+}
 int main() {
-    
-    int frameNumber=5;
-    int refrenceString[20]=[7,0,1,2,0,3,0,4,2,3,0,3,2,1,2,0,1,7,0,1]
-  
-    string algo="FIFO";
 
-    pageReplacment(frameNumber,refrenceString,algo);
+    int frameNumber = 5;
+    int refrenceString[7] = [7, 0, 1, 2, 0, 5, 1];
+
+        string algo = "FIFO";
+
+    pageReplacement(frameNumber, refrenceString, algo);
 
     return 0;
 }
+
+// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
+// Debug program: F5 or Debug > Start Debugging menu
+
+// Tips for Getting Started: 
+//   1. Use the Solution Explorer window to add/manage files
+//   2. Use the Team Explorer window to connect to source control
+//   3. Use the Output window to see build output and other messages
+//   4. Use the Error List window to view errors
+//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
+//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
