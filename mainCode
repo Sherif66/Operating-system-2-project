@@ -1,7 +1,7 @@
 #include <iostream>
+#include <string>
 using namespace std;
-int main() {
-    void pageReplacement(int freeFrames,int refrenceString[],string algorithm){
+void pageReplacement(int freeFrames,int refrenceString[],string algorithm){
         int pageFaults;
         int refrenceStringPtr=0;
         int frames[freeFrames];
@@ -32,7 +32,14 @@ int main() {
             
         }
     }
-    pageReplacment[]
+int main() {
+    
+    int frameNumber=5;
+    int refrenceString[20]=[7,0,1,2,0,3,0,4,2,3,0,3,2,1,2,0,1,7,0,1]
+  
+    string algo="FIFO";
+
+    pageReplacment(frameNumber,refrenceString,algo);
 
     return 0;
 }
