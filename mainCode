@@ -3,20 +3,16 @@
 #include <string>
 using namespace std;
 
+
 void pageReplacement(int freeFrames, int refrenceString[], string algorithm) {
     int freeFrameNum=freeFrames;
     int pageFaults = 0;
     int refrenceStringPtr = 0;
     int frames[freeFrameNum];
     int framesPtr = 0;
-    int refrenceStringLength = sizeof(refrenceString) / sizeof(refrenceString[0]);
+    int refrenceStringLength = 7;
     cout<<refrenceStringLength<<endl;
-    cout<<sizeof(refrenceString)<<endl;
-        
-    for(int i=0;i<7;++i){
-        cout<<refrenceString[i]<<endl;
-    }
-    
+
     
     
     
