@@ -199,12 +199,18 @@ delete[]frames;
 
 int main() {
 
-    int frameNumber = 3;
-    int refrenceString[20] = { 7, 0, 1, 2, 0, 3,0,4,2,3,0,3,2,1,2,0,1,7,0,1 };
-    string algo = "Optimal";
-
-
-    pageReplacement(frameNumber, refrenceString, algo);
+   cout<<"Enter Number of frame : ";
+    int frameNumber,referenceString[10];
+    string algo;
+    cin>> frameNumber;
+    cout<<"Enter reference String : ";
+    for (int i= 0; i < 10; i++) {
+    cin>>referenceString[i];
+}
+    cout<<"Enter the type of algorithm FIFO or Optimal or LRU : ";
+    cin >>algo;
+    
+    pageReplacement(frameNumber, referenceString, algo);
 
 
     return 0;
