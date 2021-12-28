@@ -1,3 +1,10 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
 
 #include <iostream>
 #include <string>
@@ -200,11 +207,13 @@ delete[]frames;
 int main() {
 
    cout<<"Enter Number of frame : ";
-    int frameNumber,referenceString[10];
+    int frameNumber,referenceString[10],referenceStringlength;
     string algo;
     cin>> frameNumber;
+    cout<<"Enter the length of reference String : ";
+    cin>>referenceStringlength;
     cout<<"Enter reference String : ";
-    for (int i= 0; i < 10; i++) {
+    for (int i= 0; i < referenceStringlength; i++) {
     cin>>referenceString[i];
 }
     cout<<"Enter the type of algorithm FIFO or Optimal or LRU : ";
